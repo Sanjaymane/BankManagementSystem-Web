@@ -1,0 +1,63 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form>
+                <fieldset>
+                    <h3 class="text-center">User Registration Form.</h3>
+
+                    <div class="form-group">
+                        <label for="Name">Username:</label>
+                        <input required  type="text" [(ngModel)]="user.name" name="name" id="name"
+                            class="form-control phone" maxlength="28" placeholder="Enter Your Username..." />
+                    </div>
+
+                    <div class="form-group">
+                      <label for="Name">Password:</label>
+                      <input required type="password" [(ngModel)]="user.password" name="password" id="password"
+                          class="form-control" maxlength="28" placeholder="Enter Your Password..." />
+                  </div>
+
+                    <div class="form-group">
+                        <label for="firstname">Email: </label>
+                        <input class="form-control" type="text" [(ngModel)]="user.email" name="email" id="txt" required
+                            placeholder="Enter Valid Email Id" />
+                        <div id="errFirst"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastname">Address : </label>
+                        <input class="form-control" type="text" [(ngModel)]="user.address" name="address" id="txt"
+                            placeholder="Enter Your Address" required />
+                        <div id="errLast"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="no">Contact No: </label>
+                        <input class="form-control" required type="text" [(ngModel)]="user.contactno" name="contactno"
+                            id="contactno" placeholder="Enter Contact Number " />
+                        <div class="status" id="contactno"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label> Date of Birth</label>
+                        <input type="date" class="form-control" #dob='ngModel' name="dob" [ngModel]="user.dob | date:'yyyy-MM-dd'"/>              
+                    </div>
+
+                    
+                    <div class="form-group">
+                        <input class="btn btn-success" type="submit" name="submit_reg" value="Register" (click)="passData('confirmregistration')">
+                        <a [routerLink]="['/login']" class="btn btn-link">Cancel</a>
+                    </div>
+                   
+                </fieldset>
+            </form>
+            
+        </div>
+
+    </div>
+</div>
