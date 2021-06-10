@@ -15,7 +15,8 @@ const appRoutes: Routes = [
     path :'loan',
     component: LoanComponent
   },
-  { path: 'register', component: RegistrationComponent },
+  { path: 'register', component: RegistrationComponent }
+  
 
   
 ];
