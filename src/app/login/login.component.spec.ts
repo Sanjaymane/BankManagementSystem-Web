@@ -1,45 +1,34 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { first } from 'rxjs/operators';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { ToastrModule } from 'ngx-toastr';
+import { LoginComponent } from './login.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 
+describe('LoginComponent', () => {
+  let component: LoginComponent;
+  let fixture: ComponentFixture<LoginComponent>;
 
-@Component({templateUrl: 'login.component.html'})
-export class LoginComponent implements OnInit {
-    loginForm: FormGroup;
-    loading = false;
-    submitted = false;
-    returnUrl: string;
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ LoginComponent ],
+      imports: [
+        FormsModule,HttpClientTestingModule,ToastrModule.forRoot(),RouterTestingModule.withRoutes([])     
+   ],
 
-    constructor(
-        private formBuilder: FormBuilder,
-        private route: ActivatedRoute,
-        private router: Router,
-      
-        
-    ) {
-        // redirect to home if already logged in
-       
-    }
+    })
+    .compileComponents();
+  }));
 
-    ngOnInit() {
-        this.loginForm = this.formBuilder.group({
-            username: ['', Validators.required],
-            password: ['', Validators.required]
-        });
+  beforeEach(() => {
+    fixture = TestBed.createComponent(LoginComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 
-        // get return url from route parameters or default to '/'
-        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-    }
-
-    // convenience getter for easy access to form fields
-    get f() { return this.loginForm.controls; }
-
-    onSubmit() {
-        // this.submitted = true;
-
-        // stop here if form is invalid
-      
-    }
-}
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

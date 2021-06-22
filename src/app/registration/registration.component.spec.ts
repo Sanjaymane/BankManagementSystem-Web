@@ -1,20 +1,21 @@
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { ToastrModule } from 'ngx-toastr';
+import { RegistrationComponent } from './registration.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 
-import { LoanComponent } from './loan.component';
-
-describe('LoanComponent', () => {
-  let component: LoanComponent;
-  let fixture: ComponentFixture<LoanComponent>;
+describe('RegistrationComponent', () => {
+  let component: RegistrationComponent;
+  let fixture: ComponentFixture<RegistrationComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LoanComponent ],
+      declarations: [ RegistrationComponent ],
       imports: [
-        FormsModule,HttpClientTestingModule,ToastrModule.forRoot()      
+        FormsModule,HttpClientTestingModule,ToastrModule.forRoot(),RouterTestingModule.withRoutes([])     
    ],
 
     })
@@ -22,7 +23,7 @@ describe('LoanComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LoanComponent);
+    fixture = TestBed.createComponent(RegistrationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

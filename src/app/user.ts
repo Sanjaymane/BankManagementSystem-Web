@@ -1,10 +1,11 @@
 export class User {
 
-        firstName: String
-        lastName: String
-        email: String
+        name: String
+        userName: String
+        password: String
         address: String
-        eventName: String
-        fromdate:Date
+        email: String
+        contacts:Number
+        dob:String
      
 }

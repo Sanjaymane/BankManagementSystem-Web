@@ -34,4 +34,11 @@ form{
     width: 100px;
 }
 
+.btnedit{
+    float: left;
+}
 
+.btndelete{
+    float: left;
+    margin-left: 10px;
+}

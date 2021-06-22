@@ -13,15 +13,26 @@ export class RegistrationService {
   
   registrationMsg$ = this.registrationData.asObservable();
 
-  constructor(private http:HttpClient) { this.HOST = "http://localhost:8051/" }
+  constructor(private http:HttpClient) { this.HOST = "http://localhost:8052/loan/"}
 
 
   post(resourceURI, body) : Observable<any>{
     return this.http.post(this.HOST + resourceURI, body);
   }
-
-  sendData(candidateData: any){
-    return this.registrationData.next(candidateData); 
+  
+  getUsers(resourceURI){
+    return this.http.get(this.HOST + resourceURI);
   }
 
+  getLoanByAccNo(resourceURI,accNo){
+    return this.http.get(this.HOST + resourceURI,accNo);
+  }
+
+  put(resourceURI, body) : Observable<any>{
+    return this.http.put(this.HOST + resourceURI, body);
+  }
+
+  deleteUser(resourceURI): Observable<any>{
+    return this.http.delete(this.HOST + resourceURI);
+  }
 }

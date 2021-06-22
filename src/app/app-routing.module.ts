@@ -10,12 +10,17 @@ const appRoutes: Routes = [
     path :'',
     component: LoginComponent
   },
-  { path: 'login', component: LoginComponent },
+  { 
+    path: 'login', 
+    component: LoginComponent },
   {
     path :'loan',
     component: LoanComponent
   },
-  { path: 'register', component: RegistrationComponent }
+  { 
+    path: 'register', 
+    component: RegistrationComponent 
+  }
   
 
   

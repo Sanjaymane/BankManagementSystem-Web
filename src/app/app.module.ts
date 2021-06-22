@@ -29,7 +29,8 @@ import { LoanComponent } from './loan/loan.component';
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    RouterModule
   ],
   providers: [RegistrationService],
   bootstrap: [AppComponent]
